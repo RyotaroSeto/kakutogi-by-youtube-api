@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  web:
+    container_name: youtube-api
+    build:
+      context: docker/
+      dockerfile: Dockerfile
+    environment:
+      LANG: ja_JP.utf8
+      TZ: Asia/Tokyo
+    ports:
+      - '8888:8888'
+    volumes:
+      - ./web:/var/www
+    working_dir: /var/www
+    tty: true
